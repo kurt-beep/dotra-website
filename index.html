@@ -29,7 +29,7 @@
   </section>
 
   <!-- About DOTRA Section -->
-  <section class="about" id="whitepaper">
+  <section class="about fade-in" id="whitepaper">
     <h2>About DOTRA</h2>
     <p>DOTRA is a new generation of digital mining. It's fair, free to access, and shaped by the community.</p>
     <p>No expensive hardware. No investments needed. Just your daily activity matters.</p>
@@ -37,7 +37,7 @@
   </section>
 
   <!-- Community Voting Section -->
-  <section class="voting" id="voting">
+  <section class="voting fade-in" id="voting">
     <h2>Community Voting</h2>
     <p>Shape the Future of DOTRA!</p>
     <p>Your voice matters. As a DOTRA miner, you’ll soon have the power to vote on major decisions:</p>
@@ -50,13 +50,13 @@
   </section>
 
   <!-- FAQ Section -->
-  <section class="faq" id="faq">
+  <section class="faq fade-in" id="faq">
     <h2>FAQ</h2>
     <p>More details coming soon! Stay tuned.</p>
   </section>
 
   <!-- Join Beta Section -->
-  <section class="join" id="join">
+  <section class="join fade-in" id="join">
     <h2>Ready to Join?</h2>
     <p>Be part of the next big thing. Start mining today!</p>
     <a href="#" class="cta-button">Download the App</a>
@@ -66,6 +66,39 @@
   <footer>
     <p>© 2024 DOTRA Project. All rights reserved.</p>
   </footer>
+
+  <!-- Smooth Scroll & Fade Script -->
+  <script>
+    // Smooth scroll behavior
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    // Fade-In on scroll
+    const faders = document.querySelectorAll('.fade-in');
+    const appearOptions = {
+      threshold: 0.3,
+    };
+    const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) {
+          return;
+        } else {
+          entry.target.classList.add('appear');
+          appearOnScroll.unobserve(entry.target);
+        }
+      });
+    }, appearOptions);
+
+    faders.forEach(fader => {
+      appearOnScroll.observe(fader);
+    });
+  </script>
 
 </body>
 </html>

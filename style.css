@@ -72,17 +72,19 @@
   
   .cta-button {
     padding: 15px 30px;
-    background: #00f0ff;
+    background: linear-gradient(90deg, #00f0ff, #00c3cc);
+    background-size: 200% 200%;
+    animation: gradientShift 4s ease infinite;
     color: #000;
     text-decoration: none;
     font-weight: bold;
     border-radius: 30px;
-    transition: background 0.3s;
+    transition: background 0.5s, transform 0.3s;
     display: inline-block;
   }
   
   .cta-button:hover {
-    background: #00c3cc;
+    transform: scale(1.05);
   }
   
   .cta-button.disabled {
@@ -124,11 +126,8 @@
     margin-top: 40px;
   }
   
-  /* -------------------------------------- */
-  /* RESPONSIVE STYLES FOR MOBILE DEVICES */
-  /* -------------------------------------- */
+  /* Responsive Design */
   @media (max-width: 768px) {
-  
     header {
       flex-direction: column;
       padding: 20px 20px;
@@ -163,5 +162,23 @@
       padding: 12px 24px;
       font-size: 16px;
     }
+  }
+  
+  /* Animations */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+  }
+  
+  .fade-in.appear {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  @keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
   }
   
