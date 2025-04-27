@@ -23,8 +23,22 @@
   }
   
   .logo {
+    display: flex;
+    align-items: center;
     font-size: 24px;
     font-weight: bold;
+  }
+  
+  .logo-img {
+    width: 36px;
+    height: 36px;
+    margin-right: 10px;
+    animation: logo-glow 3s infinite alternate;
+  }
+  
+  @keyframes logo-glow {
+    from { filter: drop-shadow(0 0 0px #00f0ff); }
+    to { filter: drop-shadow(0 0 10px #00f0ff); }
   }
   
   nav ul {

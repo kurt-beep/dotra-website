@@ -5,12 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>DOTRA - Mine the Future</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="icon.png" type="image/png"> <!-- ✅ Favicon im Tab -->
 </head>
 <body>
 
   <!-- Header -->
   <header>
-    <div class="logo">DOTRA</div>
+    <div class="logo">
+      <img src="icon.png" alt="DOTRA Logo" class="logo-img">
+      <span class="logo-text">DOTRA</span>
+    </div>
     <nav>
       <ul>
         <li><a href="#home">Home</a></li>
@@ -67,7 +71,7 @@
     <p>© 2024 DOTRA Project. All rights reserved.</p>
   </footer>
 
-  <!-- Smooth Scroll & Fade Script -->
+  <!-- Smooth Scroll & Fade-In Script -->
   <script>
     // Smooth scroll behavior
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
