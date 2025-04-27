@@ -196,17 +196,3 @@
     100% { background-position: 0% 50%; }
   }
   
-  /* Whitepaper kleiner Hero */
-.small-hero {
-    height: 40vh;
-    min-height: 300px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)),
-                url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
-    text-align: center;
-    padding: 20px;
-  }
-  
