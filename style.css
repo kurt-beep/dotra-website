@@ -147,7 +147,6 @@ footer {
     100% { background-position: 0% 50%; }
 }
 
-/* Fade-In Animation */
 .fade-in {
     opacity: 0;
     transform: translateY(20px);
@@ -201,9 +200,7 @@ footer {
     }
 
     .contents {
-        position: relative;
-        top: 0;
-        margin-bottom: 20px;
+        margin-bottom: 40px;
     }
 }
 
@@ -212,6 +209,7 @@ footer {
 /* Grid Layout für Whitepaper */
 .content-grid {
     display: flex;
+    flex-wrap: wrap;
     max-width: 1200px;
     margin: 40px auto;
     padding: 0 20px;
@@ -221,9 +219,6 @@ footer {
 /* Inhaltsverzeichnis */
 .contents {
     flex: 1;
-    position: sticky;
-    top: 100px;
-    align-self: flex-start;
     color: #fff;
     text-align: left;
 }
