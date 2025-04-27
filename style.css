@@ -3,66 +3,66 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  }
-  
-  /* Body */
-  body {
+}
+
+/* Body */
+body {
     background-color: #000;
     color: #fff;
     font-family: 'Poppins', sans-serif;
     line-height: 1.6;
-  }
-  
-  /* Header */
-  header {
+}
+
+/* Header */
+header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px 50px;
     background: #111;
-  }
-  
-  .logo {
+}
+
+.logo {
     display: flex;
     align-items: center;
     font-size: 24px;
     font-weight: bold;
-  }
-  
-  .logo-img {
+}
+
+.logo-img {
     width: 36px;
     height: 36px;
     margin-right: 10px;
     animation: logo-glow 3s infinite alternate;
-  }
-  
-  @keyframes logo-glow {
+}
+
+@keyframes logo-glow {
     from { filter: drop-shadow(0 0 0px #00f0ff); }
     to { filter: drop-shadow(0 0 10px #00f0ff); }
-  }
-  
-  nav ul {
+}
+
+nav ul {
     list-style: none;
     display: flex;
-  }
-  
-  nav ul li {
+}
+
+nav ul li {
     margin-left: 30px;
-  }
-  
-  nav ul li a {
+}
+
+nav ul li a {
     text-decoration: none;
     color: #fff;
     font-size: 16px;
     transition: color 0.3s;
-  }
-  
-  nav ul li a:hover {
+}
+
+nav ul li a:hover {
     color: #00f0ff;
-  }
-  
-  /* Hero Section */
-  .hero {
+}
+
+/* Hero Section */
+.hero {
     height: 100vh;
     background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
                 url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
@@ -72,19 +72,19 @@
     align-items: center;
     text-align: center;
     padding: 0 20px;
-  }
-  
-  .hero h1 {
+}
+
+.hero h1 {
     font-size: 48px;
     margin-bottom: 20px;
-  }
-  
-  .hero p {
+}
+
+.hero p {
     font-size: 20px;
     margin-bottom: 30px;
-  }
-  
-  .cta-button {
+}
+
+.cta-button {
     padding: 15px 30px;
     background: linear-gradient(90deg, #00f0ff, #00c3cc);
     background-size: 200% 200%;
@@ -95,145 +95,167 @@
     border-radius: 30px;
     transition: background 0.5s, transform 0.3s;
     display: inline-block;
-  }
-  
-  .cta-button:hover {
+}
+
+.cta-button:hover {
     transform: scale(1.05);
-  }
-  
-  .cta-button.disabled {
+}
+
+.cta-button.disabled {
     background: grey;
     pointer-events: none;
     cursor: default;
-  }
-  
-  /* Sections */
-  section {
+}
+
+/* Sections */
+section {
     padding: 80px 20px;
     text-align: center;
-  }
-  
-  .about, .faq, .join, .voting {
+}
+
+.about, .faq, .join, .voting {
     background: #111;
     margin-top: 20px;
     border-radius: 10px;
     padding: 60px 20px;
-  }
-  
-  /* Voting Specific */
-  .voting ul {
+}
+
+/* Voting Specific */
+.voting ul {
     list-style: none;
     margin-top: 20px;
-  }
-  
-  .voting ul li {
+}
+
+.voting ul li {
     margin-bottom: 10px;
     font-size: 18px;
-  }
-  
-  /* Footer */
-  footer {
+}
+
+/* Footer */
+footer {
     background: #111;
     padding: 20px;
     text-align: center;
     font-size: 14px;
     margin-top: 40px;
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 768px) {
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
     header {
-      flex-direction: column;
-      padding: 20px 20px;
+        flex-direction: column;
+        padding: 20px 20px;
     }
-  
+
     nav ul {
-      flex-direction: column;
-      align-items: center;
+        flex-direction: column;
+        align-items: center;
     }
-  
+
     nav ul li {
-      margin: 10px 0;
+        margin: 10px 0;
     }
-  
+
     .hero h1 {
-      font-size: 32px;
+        font-size: 32px;
     }
-  
+
     .hero p {
-      font-size: 16px;
+        font-size: 16px;
     }
-  
+
     section {
-      padding: 40px 10px;
+        padding: 40px 10px;
     }
-  
+
     .about, .faq, .join, .voting {
-      padding: 30px 10px;
+        padding: 30px 10px;
     }
-  
+
     .cta-button {
-      padding: 12px 24px;
-      font-size: 16px;
+        padding: 12px 24px;
+        font-size: 16px;
     }
-  }
-  
-  /* Animations */
-  .fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 1s ease-out, transform 1s ease-out;
-  }
-  
-  .fade-in.appear {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  
-  @keyframes gradientShift {
+
+    .content-grid {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+/* Animations */
+@keyframes gradientShift {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
-  }
-  
-  /* Whitepaper Content Styling */
-.whitepaper-content {
-    background-color: #9c9c9c;
-    color: #111;
-    max-width: 900px;
+}
+
+/* Whitepaper Content Styling */
+.content-grid {
+    display: flex;
+    max-width: 1200px;
     margin: 40px auto;
-    padding: 40px 30px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+    gap: 40px;
+    padding: 0 20px;
+}
+
+.contents {
+    flex: 1;
+    background: transparent;
+    color: #fff;
     text-align: left;
-  }
-  
-  .whitepaper-content h1 {
-    font-size: 32px;
+    padding-top: 20px;
+}
+
+.contents h2 {
+    font-size: 26px;
     color: #00f0ff;
     margin-bottom: 20px;
+}
+
+.contents ul {
+    padding-left: 20px;
+}
+
+.contents ul li {
+    margin-bottom: 10px;
+}
+
+.contents ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.contents ul li a:hover {
+    color: #00f0ff;
+}
+
+.whitepaper-content {
+    flex: 2;
+    background-color: #000;
+    color: #fff;
+    padding: 40px 30px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+    text-align: left;
+}
+
+.whitepaper-content h1 {
+    font-size: 32px;
+    color: #00f0ff;
+    margin-bottom: 30px;
     text-align: center;
-  }
-  
-  .whitepaper-content h2 {
+}
+
+.whitepaper-content h2 {
     font-size: 26px;
     color: #00c3cc;
     margin-top: 40px;
-  }
-  
-  .whitepaper-content p {
+}
+
+.whitepaper-content p {
     margin-top: 20px;
+    font-size: 18px;
     line-height: 1.8;
-    font-size: 18px;
-  }
-  
-  .whitepaper-content ul {
-    margin-top: 20px;
-    padding-left: 20px;
-  }
-  
-  .whitepaper-content ul li {
-    margin-bottom: 10px;
-    font-size: 18px;
-  }
-  
+}
