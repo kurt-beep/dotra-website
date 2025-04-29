@@ -1,58 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="stylesheet" href="style.css?v=4" />
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dotra</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to Dotra</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=5">
 </head>
 <body>
-  <header>DOTRA</header>
 
-  <div class="logo-wrapper">
-    <img src="icon.png" alt="Dotra Logo" class="center-logo" id="logo" />
+  <div class="hero">
+    <div class="logo-wrapper">
+      <img src="icon.png" alt="Dotra Logo" class="center-logo" id="logo">
+    </div>
+    <h1 class="typewriter" id="typewriter-text"></h1>
+
+    <div class="download-links" id="download-links">
+      <a class="store-link" href="#"><img src="appstore.png" alt="App Store"></a>
+      <a class="store-link" href="#"><img src="playstore.png" alt="Google Play"></a>
+    </div>
   </div>
 
-  <section class="text-section left-top">
-    <h1>About Dotra</h1>
-    <p>
-      The next-gen way to mine.<br><br>
-      No hardware. No cost.<br>
-      Just you – and your activity.
-    </p>
-  </section>
-
-  <section class="text-section right-top">
-    <h1>Get the App</h1>
-    <p>
-      Start earning in seconds.
-    </p>
-    <div class="download-links">
-      <a class="store-link" href="#"><img src="assets/appstore.png" alt="App Store" /></a>
-      <a class="store-link" href="#"><img src="assets/playstore.png" alt="Google Play" /></a>
-    </div>
-  </section>
-
-  <section class="text-section left-bottom">
-    <h1>No Risk</h1>
-    <p>
-      You earn. No investment, no traps. Just real value, from real users.
-    </p>
-  </section>
-
-  <section class="text-section right-bottom">
-    <h1>Global & Fair</h1>
-    <p>
-      Empowering people. Worldwide.<br>
-      Together, we build decentralized value.
-    </p>
-  </section>
-
   <script>
+    // Typing animation
+    const text = "Welcome to Dotra...";
+    let index = 0;
+
     setTimeout(() => {
       document.body.classList.add('show');
-    }, 3500);
+
+      const interval = setInterval(() => {
+        document.getElementById("typewriter-text").textContent += text[index];
+        index++;
+        if (index === text.length) {
+          clearInterval(interval);
+          document.getElementById("download-links").classList.add('show-links');
+        }
+      }, 100);
+
+    }, 3500); // after logo spin ends
   </script>
+
 </body>
 </html>
