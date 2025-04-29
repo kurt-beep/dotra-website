@@ -1,5 +1,3 @@
-/* style.css */
-
 body {
     margin: 0;
     padding: 0;
@@ -34,15 +32,11 @@ body {
   }
   
   @keyframes spin {
-    0% {
-      transform: translate(-50%, -50%) rotate(0deg);
-    }
-    100% {
-      transform: translate(-50%, -50%) rotate(1080deg);
-    }
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(1080deg); } /* 3x Umdrehung */
   }
   
-  /* Textbox base style */
+  /* Textboxen */
   .text-box {
     position: absolute;
     opacity: 0;
@@ -54,41 +48,36 @@ body {
     border-radius: 12px;
   }
   
-  /* Positioning before animation */
+  /* Startpositionen mit transform */
   .left-top {
     top: 20%;
-    left: -100%;
+    left: 5%;
+    transform: translateX(-150%);
   }
   .left-bottom {
     bottom: 20%;
-    left: -100%;
+    left: 5%;
+    transform: translateX(-150%);
   }
   .right-top {
     top: 20%;
-    right: -100%;
+    right: 5%;
+    transform: translateX(150%);
     text-align: right;
   }
   .right-bottom {
     bottom: 20%;
-    right: -100%;
+    right: 5%;
+    transform: translateX(150%);
     text-align: right;
   }
   
-  /* Animate in when body has .show */
-  body.show .left-top {
-    transform: translateX(120%);
-    opacity: 1;
-  }
-  body.show .left-bottom {
-    transform: translateX(120%);
-    opacity: 1;
-  }
-  body.show .right-top {
-    transform: translateX(-120%);
-    opacity: 1;
-  }
+  /* Zielposition nach show */
+  body.show .left-top,
+  body.show .left-bottom,
+  body.show .right-top,
   body.show .right-bottom {
-    transform: translateX(-120%);
+    transform: translateX(0);
     opacity: 1;
   }
   
