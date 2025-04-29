@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="stylesheet" href="style.css?v=2">
+  <link rel="stylesheet" href="style.css?v=3" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dotra</title>
@@ -9,44 +9,48 @@
 <body>
   <header>DOTRA</header>
 
-  <img src="icon.png" alt="Dotra Logo" class="center-logo" id="logo" />
+  <div class="logo-wrapper">
+    <img src="icon.png" alt="Dotra Logo" class="center-logo" id="logo" />
+  </div>
 
   <div class="text-box left-top">
-    <h3>About DOTRA</h3>
+    <h2>About DOTRA</h2>
     <p>
-      DOTRA is a new generation of digital mining. It's fair, free to access, and shaped by the community.<br><br>
-      No expensive hardware. No investments needed. Just your daily activity matters.<br><br>
-      Together, we build a decentralized and transparent future, powered by engagement and innovation.
+      A new generation of digital mining.<br><br>
+      No expensive hardware. No upfront costs. Just your activity counts.<br><br>
+      Together, we build a decentralized and transparent future.
     </p>
   </div>
 
   <div class="text-box right-top">
-    <h3>Download the App</h3>
+    <h2>Download the App</h2>
     <p>
-      Start mining now:<br><br>
+      Start mining now:
+    </p>
+    <div class="download-links">
       <a class="store-link" href="#"><img src="assets/appstore.png" alt="App Store" /></a>
       <a class="store-link" href="#"><img src="assets/playstore.png" alt="Google Play" /></a>
-    </p>
+    </div>
   </div>
 
   <div class="text-box left-bottom">
-    <h3>Earn Without Risk</h3>
+    <h2>Earn Without Risk</h2>
     <p>
-      You mine by just being active. No upfront payments, no traps. Your time, your value.
+      Mine by just being active. No traps. Your time is your value.
     </p>
   </div>
 
   <div class="text-box right-bottom">
-    <h3>Built for Everyone</h3>
+    <h2>Built for Everyone</h2>
     <p>
-      DOTRA empowers users worldwide. Join the movement and shape the future of decentralized value.
+      DOTRA empowers users globally. Be part of a movement to democratize value.
     </p>
   </div>
 
   <script>
     setTimeout(() => {
       document.body.classList.add('show');
-    }, 3500); // wait for spin to finish
+    }, 3500);
   </script>
 </body>
 </html>

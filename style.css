@@ -7,48 +7,70 @@ body {
     overflow: hidden;
   }
   
+  /* Header */
   header {
     position: fixed;
     top: 0;
     width: 100%;
     background: rgba(0, 0, 0, 0.8);
-    padding: 16px 32px;
+    padding: 20px 40px;
     text-align: center;
-    font-size: 24px;
-    font-weight: bold;
+    font-size: 26px;
+    font-weight: 600;
     z-index: 1000;
-    color: white;
+    color: #00ffc3;
+    letter-spacing: 2px;
+    text-transform: uppercase;
   }
   
   /* Logo */
-  .center-logo {
+  .logo-wrapper {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 100px;
-    height: 100px;
-    animation: spin 3s linear 1;
+  }
+  
+  .center-logo {
+    width: 120px;
+    height: 120px;
+    animation: spin 3s ease-out 1;
+    transform-origin: center center;
   }
   
   @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(1080deg); } /* 3x Umdrehung */
+    from { transform: rotate(0deg); }
+    to { transform: rotate(1080deg); }
   }
   
-  /* Textboxen */
+  /* Textboxes */
   .text-box {
     position: absolute;
     opacity: 0;
+    transform: translateX(0);
     transition: opacity 1s ease, transform 1s ease;
-    max-width: 300px;
-    padding: 20px;
-    background-color: rgba(255, 255, 255, 0.05);
-    border: 1px solid #333;
-    border-radius: 12px;
+    max-width: 340px;
+    padding: 24px;
+    background-color: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 15px rgba(0, 255, 195, 0.2);
   }
   
-  /* Startpositionen mit transform */
+  .text-box h2 {
+    margin-top: 0;
+    font-size: 22px;
+    color: #00ffc3;
+  }
+  
+  .text-box p {
+    margin: 10px 0 0;
+    line-height: 1.6;
+    font-size: 16px;
+  }
+  
+  /* Startpositionen */
   .left-top {
     top: 20%;
     left: 5%;
@@ -72,7 +94,7 @@ body {
     text-align: right;
   }
   
-  /* Zielposition nach show */
+  /* Slide-in Effekt */
   body.show .left-top,
   body.show .left-bottom,
   body.show .right-top,
@@ -81,10 +103,16 @@ body {
     opacity: 1;
   }
   
-  /* Store buttons */
+  /* App Store Buttons */
+  .download-links {
+    margin-top: 12px;
+    display: flex;
+    gap: 12px;
+    justify-content: flex-end;
+  }
+  
   a.store-link img {
     height: 40px;
-    margin-left: 10px;
     transition: transform 0.2s;
   }
   a.store-link img:hover {
