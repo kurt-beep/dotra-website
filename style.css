@@ -5,25 +5,25 @@ body {
     font-family: 'Inter', sans-serif;
     background-color: #000;
     color: white;
-    overflow: hidden;
+    overflow-x: hidden;
+  }
+  
+  /* Hero Section */
+  .hero {
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-  }
-  
-  /* Hero Bereich */
-  .hero {
     text-align: center;
+    padding: 20px;
   }
   
-  /* Logo Wrapper */
+  /* Logo Spin */
   .logo-wrapper {
     position: relative;
   }
   
-  /* Logo Style */
   .center-logo {
     width: 120px;
     height: 120px;
@@ -31,33 +31,31 @@ body {
     transform-origin: center center;
   }
   
-  /* Spin Animation */
   @keyframes spin {
     from { transform: rotate(0deg); }
     to { transform: rotate(1080deg); }
   }
   
-  /* Typing Animation (Willkommenstext) */
+  /* Typing Animation */
   .typewriter {
     margin-top: 40px;
     font-size: 28px;
     font-weight: 600;
     letter-spacing: 1.5px;
-    color: #00ffc3;
+    color: white;
     min-height: 40px;
     overflow: hidden;
     white-space: nowrap;
-    border-right: 2px solid #00ffc3;
+    border-right: 2px solid white;
     animation: blink 0.7s infinite step-end;
   }
   
-  /* Blink Animation beim Tippen */
   @keyframes blink {
     from, to { border-color: transparent; }
-    50% { border-color: #00ffc3; }
+    50% { border-color: white; }
   }
   
-  /* Download-Links (App Store, Play Store) */
+  /* Download Links */
   .download-links {
     margin-top: 30px;
     opacity: 0;
@@ -67,12 +65,10 @@ body {
     justify-content: center;
   }
   
-  /* Sichtbar machen der Download-Links */
   .download-links.show-links {
     opacity: 1;
   }
   
-  /* Store-Button Styles */
   a.store-link img {
     height: 50px;
     transition: transform 0.3s;
@@ -80,5 +76,53 @@ body {
   
   a.store-link img:hover {
     transform: scale(1.1);
+  }
+  
+  /* Content Sections */
+  .content-section {
+    padding: 80px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .content-section h2 {
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: white;
+  }
+  
+  .content-section p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: white;
+    margin: 0 auto;
+    max-width: 700px;
+  }
+  
+  /* Drei Spalten für „How it works“ */
+  .three-columns {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+  }
+  
+  .column {
+    flex: 1 1 250px;
+    max-width: 300px;
+  }
+  
+  .column h3 {
+    font-size: 22px;
+    margin-bottom: 12px;
+    color: white;
+  }
+  
+  .column p {
+    font-size: 16px;
+    color: white;
+    line-height: 1.6;
   }
   
