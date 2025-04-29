@@ -1,29 +1,27 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Inter', sans-serif;
     background-color: #000;
-    color: white;
+    color: #fff;
     overflow: hidden;
   }
   
-  /* Header */
   header {
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.85);
     padding: 20px 40px;
     text-align: center;
     font-size: 26px;
-    font-weight: 600;
+    font-weight: 700;
     z-index: 1000;
     color: #00ffc3;
     letter-spacing: 2px;
-    text-transform: uppercase;
   }
   
-  /* Logo */
+  /* Logo zentriert */
   .logo-wrapper {
     position: absolute;
     top: 50%;
@@ -43,58 +41,56 @@ body {
     to { transform: rotate(1080deg); }
   }
   
-  /* Textboxes */
-  .text-box {
+  /* Text-Abschnitte */
+  .text-section {
     position: absolute;
     opacity: 0;
-    transform: translateX(0);
     transition: opacity 1s ease, transform 1s ease;
-    max-width: 340px;
-    padding: 24px;
-    background-color: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: 16px;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 0 15px rgba(0, 255, 195, 0.2);
+    max-width: 420px;
+    padding: 0;
   }
   
-  .text-box h2 {
-    margin-top: 0;
-    font-size: 22px;
-    color: #00ffc3;
+  .text-section h1 {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    background: linear-gradient(90deg, #00ffc3, #00a6ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
   
-  .text-box p {
-    margin: 10px 0 0;
-    line-height: 1.6;
+  .text-section p {
     font-size: 16px;
+    line-height: 1.8;
+    color: #ddd;
+    margin: 0;
   }
   
-  /* Startpositionen */
+  /* Startposition */
   .left-top {
     top: 20%;
-    left: 5%;
+    left: 6%;
     transform: translateX(-150%);
   }
   .left-bottom {
     bottom: 20%;
-    left: 5%;
+    left: 6%;
     transform: translateX(-150%);
   }
   .right-top {
     top: 20%;
-    right: 5%;
+    right: 6%;
     transform: translateX(150%);
     text-align: right;
   }
   .right-bottom {
     bottom: 20%;
-    right: 5%;
+    right: 6%;
     transform: translateX(150%);
     text-align: right;
   }
   
-  /* Slide-in Effekt */
+  /* Slide-in */
   body.show .left-top,
   body.show .left-bottom,
   body.show .right-top,
@@ -103,9 +99,9 @@ body {
     opacity: 1;
   }
   
-  /* App Store Buttons */
+  /* Download Buttons */
   .download-links {
-    margin-top: 12px;
+    margin-top: 18px;
     display: flex;
     gap: 12px;
     justify-content: flex-end;
