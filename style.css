@@ -1,276 +1,126 @@
-/* Basic Reset */
-* {
+/* style.css */
+
+body {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
-
-/* Body */
-body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #000;
-    color: #fff;
-    font-family: 'Poppins', sans-serif;
-    line-height: 1.6;
-}
-
-/* Header */
-header {
+    color: white;
+    overflow-x: hidden;
+  }
+  
+  header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 16px 32px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 50px;
-    background: #111;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
+    z-index: 1000;
+  }
+  
+  header h1 {
     font-size: 24px;
-    font-weight: bold;
-}
-
-.logo-img {
-    width: 36px;
-    height: 36px;
-    margin-right: 10px;
-    animation: logo-glow 3s infinite alternate;
-}
-
-@keyframes logo-glow {
-    from { filter: drop-shadow(0 0 0px #00f0ff); }
-    to { filter: drop-shadow(0 0 10px #00f0ff); }
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-}
-
-nav ul li {
-    margin-left: 30px;
-}
-
-nav ul li a {
-    text-decoration: none;
+    margin: 0;
+    color: white;
+  }
+  
+  nav a {
+    margin-left: 24px;
     color: #fff;
-    font-size: 16px;
+    text-decoration: none;
+    font-weight: 500;
     transition: color 0.3s;
-}
-
-nav ul li a:hover {
-    color: #00f0ff;
-}
-
-/* Hero Section */
-.hero {
-    height: 100vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
-                url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+  }
+  
+  nav a:hover {
+    color: #00ffc3;
+  }
+  
+  #hero {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: center;
-    padding: 0 20px;
-}
-
-.hero h1 {
-    font-size: 48px;
-    margin-bottom: 20px;
-}
-
-.hero p {
-    font-size: 20px;
-    margin-bottom: 30px;
-}
-
-.cta-button {
-    padding: 15px 30px;
-    background: linear-gradient(90deg, #00f0ff, #00c3cc);
-    background-size: 200% 200%;
-    animation: gradientShift 4s ease infinite;
-    color: #000;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 30px;
-    transition: background 0.5s, transform 0.3s;
-    display: inline-block;
-}
-
-.cta-button:hover {
-    transform: scale(1.05);
-}
-
-.cta-button.disabled {
-    background: grey;
-    pointer-events: none;
-    cursor: default;
-}
-
-/* Sections */
-section {
-    padding: 80px 20px;
-    text-align: center;
-}
-
-.about, .faq, .join, .voting {
-    background: #111;
-    margin-top: 20px;
-    border-radius: 10px;
-    padding: 60px 20px;
-}
-
-/* Voting Specific */
-.voting ul {
-    list-style: none;
-    margin-top: 20px;
-}
-
-.voting ul li {
-    margin-bottom: 10px;
-    font-size: 18px;
-}
-
-/* Footer */
-footer {
-    background: #111;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  #dotra-logo {
+    width: 120px;
+    animation: spin 1.5s ease-out 1;
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg) scale(1);
+    }
+    100% {
+      transform: rotate(1080deg) scale(1);
+    }
+  }
+  
+  .info-box {
+    position: absolute;
+    width: 40%;
+    max-width: 400px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid #333;
     padding: 20px;
-    text-align: center;
-    font-size: 14px;
-    margin-top: 40px;
-}
-
-/* Animations */
-@keyframes gradientShift {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-
-.fade-in {
+    border-radius: 12px;
     opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 1s ease-out, transform 1s ease-out;
-}
-
-.fade-in.appear {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        padding: 20px 20px;
+    animation-fill-mode: forwards;
+  }
+  
+  .info-top-left {
+    top: 10%;
+    left: -50%;
+    animation: slideInLeft 1s ease 1.8s forwards;
+  }
+  .info-bottom-left {
+    bottom: 10%;
+    left: -50%;
+    animation: slideInLeft 1s ease 2.1s forwards;
+  }
+  .info-top-right {
+    top: 10%;
+    right: -50%;
+    animation: slideInRight 1s ease 2.4s forwards;
+  }
+  .info-bottom-right {
+    bottom: 10%;
+    right: -50%;
+    animation: slideInRight 1s ease 2.7s forwards;
+  }
+  
+  @keyframes slideInLeft {
+    to {
+      left: 5%;
+      opacity: 1;
     }
-
-    nav ul {
-        flex-direction: column;
-        align-items: center;
+  }
+  
+  @keyframes slideInRight {
+    to {
+      right: 5%;
+      opacity: 1;
     }
-
-    nav ul li {
-        margin: 10px 0;
-    }
-
-    .hero h1 {
-        font-size: 32px;
-    }
-
-    .hero p {
-        font-size: 16px;
-    }
-
-    section {
-        padding: 40px 10px;
-    }
-
-    .about, .faq, .join, .voting {
-        padding: 30px 10px;
-    }
-
-    .cta-button {
-        padding: 12px 24px;
-        font-size: 16px;
-    }
-
-    .content-grid {
-        flex-direction: column;
-    }
-
-    .contents {
-        margin-bottom: 40px;
-    }
-}
-
-/* --- DOTRA Whitepaper Specific --- */
-
-/* Grid Layout für Whitepaper */
-.content-grid {
+  }
+  
+  .download-links {
     display: flex;
-    flex-wrap: wrap;
-    max-width: 1200px;
-    margin: 40px auto;
-    padding: 0 20px;
-    gap: 40px;
-}
-
-/* Inhaltsverzeichnis */
-.contents {
-    flex: 1;
-    color: #fff;
-    text-align: left;
-}
-
-.contents h2 {
-    font-size: 24px;
-    color: #00f0ff;
-    margin-bottom: 20px;
-}
-
-.contents ul {
-    list-style: none;
-    padding-left: 0;
-}
-
-.contents ul li {
-    margin-bottom: 10px;
-}
-
-.contents ul li a {
-    color: #fff;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-.contents ul li a:hover {
-    color: #00f0ff;
-}
-
-/* Whitepaper Content */
-.whitepaper-content {
-    flex: 3;
-    color: #fff;
-    text-align: left;
-    padding: 0 20px;
-}
-
-.whitepaper-content h1 {
-    font-size: 32px;
-    color: #00f0ff;
-    margin-bottom: 30px;
-    text-align: center;
-}
-
-.whitepaper-content h2 {
-    font-size: 26px;
-    color: #ffffff;
-    margin-top: 40px;
-}
-
-.whitepaper-content p {
-    margin-top: 20px;
-    font-size: 18px;
-    line-height: 1.8;
-}
+    gap: 16px;
+    margin-top: 12px;
+  }
+  
+  .download-links img {
+    height: 40px;
+    transition: transform 0.2s;
+  }
+  
+  .download-links img:hover {
+    transform: scale(1.05);
+  }
+  

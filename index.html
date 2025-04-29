@@ -1,127 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-  <title>DOTRA | Mine the Future</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dotra</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #000;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+    }
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.8);
+      z-index: 100;
+      text-align: center;
+      font-size: 20px;
+      font-weight: bold;
+      color: #fff;
+    }
+    .center-logo {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100px;
+      height: 100px;
+      animation: spin 3s linear 1;
+    }
+    @keyframes spin {
+      0% { transform: translate(-50%, -50%) rotate(0deg); }
+      100% { transform: translate(-50%, -50%) rotate(1080deg); }
+    }
+    .text-box {
+      position: absolute;
+      opacity: 0;
+      transition: opacity 1s ease, transform 1s ease;
+      max-width: 300px;
+    }
+    .left-top { top: 20%; left: -100%; }
+    .left-bottom { bottom: 20%; left: -100%; }
+    .right-top { top: 20%; right: -100%; text-align: right; }
+    .right-bottom { bottom: 20%; right: -100%; text-align: right; }
 
-  <!-- ✅ SEO Meta-Daten -->
-  <meta name="description" content="Join DOTRA, the future of fair and free digital mining. Start mining DOTRA today and be part of a growing global community.">
-  <meta name="keywords" content="DOTRA, Crypto Mining, Free Mining, Digital Currency, Blockchain, DOTRA App">
-  
-  <!-- ✅ OpenGraph Meta für Social Media -->
-  <meta property="og:title" content="DOTRA | Mine the Future">
-  <meta property="og:description" content="Join DOTRA and experience fair, free digital mining. Be part of the community and claim your daily DOTRA rewards.">
-  <meta property="og:image" content="https://dotraapp.com/icon.png">
-  <meta property="og:url" content="https://dotraapp.com">
-  <meta property="og:type" content="website">
-  
-  <!-- ✅ Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="DOTRA | Mine the Future">
-  <meta name="twitter:description" content="Start mining DOTRA today. Fair, free, community-based digital currency.">
-  <meta name="twitter:image" content="https://dotraapp.com/icon.png">
-
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="icon.png" type="image/png"> <!-- ✅ Favicon im Tab -->
+    .show .left-top {
+      transform: translateX(120%);
+      opacity: 1;
+    }
+    .show .left-bottom {
+      transform: translateX(120%);
+      opacity: 1;
+    }
+    .show .right-top {
+      transform: translateX(-120%);
+      opacity: 1;
+    }
+    .show .right-bottom {
+      transform: translateX(-120%);
+      opacity: 1;
+    }
+    a.store-link img {
+      height: 40px;
+      margin-left: 10px;
+    }
+  </style>
 </head>
 <body>
+  <header>DOTRA</header>
+  <img src="assets/icon/icon.png" alt="Dotra Logo" class="center-logo" id="logo" />
 
-  <!-- Header -->
-  <header>
-    <div class="logo">
-      <img src="icon.png" alt="DOTRA Logo" class="logo-img">
-      <span class="logo-text">DOTRA</span>
-    </div>
-    <nav>
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="whitepaper.html">Whitepaper</a></li>
-        <li><a href="#faq">FAQ</a></li>
-        <li><a href="#join">Join Beta</a></li>
-      </ul>
-    </nav>
-  </header>
+  <div class="text-box left-top">
+    <h3>About DOTRA</h3>
+    <p>
+      DOTRA is a new generation of digital mining. It's fair, free to access, and shaped by the community.<br><br>
+      No expensive hardware. No investments needed. Just your daily activity matters.<br><br>
+      Together, we build a decentralized and transparent future, powered by engagement and innovation.
+    </p>
+  </div>
+  <div class="text-box left-bottom">
+    <h3>Earn Without Risk</h3>
+    <p>
+      You mine by just being active. No upfront payments, no traps. Your time, your value.
+    </p>
+  </div>
+  <div class="text-box right-top">
+    <h3>Download the App</h3>
+    <p>
+      Start mining now:
+      <br><br>
+      <a class="store-link" href="#"><img src="assets/appstore.png" alt="App Store" /></a>
+      <a class="store-link" href="#"><img src="assets/playstore.png" alt="Google Play" /></a>
+    </p>
+  </div>
+  <div class="text-box right-bottom">
+    <h3>Built for Everyone</h3>
+    <p>
+      DOTRA empowers users worldwide. Join the movement and shape the future of decentralized value.
+    </p>
+  </div>
 
-  <!-- Hero Section -->
-  <section class="hero" id="home">
-    <h1>Mine the Future. Mine DOTRA.</h1>
-    <p>Join the fair, community-driven digital mining revolution.</p>
-    <a href="#join" class="cta-button">Join Beta</a>
-  </section>
-
-  <!-- About DOTRA Section -->
-  <section class="about fade-in" id="whitepaper">
-    <h2>About DOTRA</h2>
-    <p>DOTRA is a new generation of digital mining. It's fair, free to access, and shaped by the community.</p>
-    <p>No expensive hardware. No investments needed. Just your daily activity matters.</p>
-    <p>Together, we build a decentralized and transparent future, powered by engagement and innovation.</p>
-  </section>
-
-  <!-- Community Voting Section -->
-  <section class="voting fade-in" id="voting">
-    <h2>Community Voting</h2>
-    <p>Shape the Future of DOTRA!</p>
-    <p>Your voice matters. As a DOTRA miner, you’ll soon have the power to vote on major decisions:</p>
-    <ul>
-      <li>New features</li>
-      <li>Future token uses</li>
-      <li>Community initiatives</li>
-    </ul>
-    <a href="#" class="cta-button disabled">Voting coming soon</a>
-  </section>
-
-  <!-- FAQ Section -->
-  <section class="faq fade-in" id="faq">
-    <h2>FAQ</h2>
-    <p>More details coming soon! Stay tuned.</p>
-  </section>
-
-  <!-- Join Beta Section -->
-  <section class="join fade-in" id="join">
-    <h2>Ready to Join?</h2>
-    <p>Be part of the next big thing. Start mining today!</p>
-    <a href="#" class="cta-button">Download the App</a>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <p>© 2024 DOTRA Project. All rights reserved.</p>
-  </footer>
-
-  <!-- Smooth Scroll & Fade-In Script -->
   <script>
-    // Smooth scroll behavior
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
-        });
-      });
-    });
-
-    // Fade-In on scroll
-    const faders = document.querySelectorAll('.fade-in');
-    const appearOptions = {
-      threshold: 0.3,
-    };
-    const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
-      entries.forEach(entry => {
-        if (!entry.isIntersecting) {
-          return;
-        } else {
-          entry.target.classList.add('appear');
-          appearOnScroll.unobserve(entry.target);
-        }
-      });
-    }, appearOptions);
-
-    faders.forEach(fader => {
-      appearOnScroll.observe(fader);
-    });
+    setTimeout(() => {
+      document.body.classList.add('show');
+    }, 3500); // wait for spin to finish
   </script>
-
 </body>
 </html>
