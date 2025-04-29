@@ -1,90 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Welcome to Dotra</title>
+  <link rel="stylesheet" href="style.css?v=6" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dotra</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=5">
 </head>
 <body>
-
-  <div class="hero">
+  <main class="hero">
     <div class="logo-wrapper">
-      <img src="icon.png" alt="Dotra Logo" class="center-logo" id="logo">
+      <img src="icon.png" alt="Dotra Logo" class="center-logo" id="logo" />
     </div>
-    <h1 class="typewriter" id="typewriter-text"></h1>
 
-    <div class="download-links" id="download-links">
-      <a class="store-link" href="#"><img src="appstore.png" alt="App Store"></a>
-      <a class="store-link" href="#"><img src="playstore.png" alt="Google Play"></a>
-    </div>
-  </div>
+    <div class="typewriter" id="typing-text"></div>
 
-  <!-- SECTION: What is Dotra -->
-  <section class="content-section">
-    <h2>What is DOTRA?</h2>
-    <p>
-      DOTRA is a new kind of mining – fair, free, and powered by people. 
-      No hardware. No risk. Just your activity.
-    </p>
-  </section>
-
-  <!-- SECTION: How it works -->
-  <section class="content-section three-columns">
-    <div class="column">
-      <h3>1. Join</h3>
-      <p>Create your account and invite your crew.</p>
+    <div class="download-links" id="download">
+      <a class="store-link" href="#"><img src="assets/appstore.png" alt="App Store" /></a>
+      <a class="store-link" href="#"><img src="assets/playstore.png" alt="Google Play" /></a>
     </div>
-    <div class="column">
-      <h3>2. Stay Active</h3>
-      <p>Your daily activity builds your mining power.</p>
-    </div>
-    <div class="column">
-      <h3>3. Earn</h3>
-      <p>Receive rewards – transparently, fairly, and together.</p>
-    </div>
-  </section>
-
-  <!-- SECTION: Vision -->
-  <section class="content-section">
-    <h2>Our Vision</h2>
-    <p>
-      We believe in a world where digital value is earned by participation – not purchase.
-      DOTRA makes mining accessible to everyone, everywhere, anytime.
-    </p>
-  </section>
-
-  <!-- SECTION: Call to Action -->
-  <section class="content-section">
-    <h2>Start mining now</h2>
-    <p>
-      Be part of the next digital movement. Join DOTRA and help shape a decentralized future.
-    </p>
-    <div class="download-links">
-      <a class="store-link" href="#"><img src="appstore.png" alt="App Store"></a>
-      <a class="store-link" href="#"><img src="playstore.png" alt="Google Play"></a>
-    </div>
-  </section>
+  </main>
 
   <script>
+    // Zeige Download-Buttons nach Typing
     const text = "Welcome to Dotra...";
-    let index = 0;
+    const typingElement = document.getElementById("typing-text");
+    const download = document.getElementById("download");
 
-    setTimeout(() => {
-      document.body.classList.add('show');
+    let i = 0;
+    function type() {
+      if (i < text.length) {
+        typingElement.innerHTML += text.charAt(i);
+        i++;
+        setTimeout(type, 80);
+      } else {
+        download.classList.add("show-links");
+      }
+    }
 
-      const interval = setInterval(() => {
-        document.getElementById("typewriter-text").textContent += text[index];
-        index++;
-        if (index === text.length) {
-          clearInterval(interval);
-          document.getElementById("download-links").classList.add('show-links');
-        }
-      }, 100);
-
-    }, 3500);
+    // Starte nach Spin (3s)
+    setTimeout(type, 3000);
   </script>
-
 </body>
 </html>
