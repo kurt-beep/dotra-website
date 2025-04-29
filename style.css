@@ -6,7 +6,7 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #000;
     color: white;
-    overflow-x: hidden;
+    overflow: hidden;
   }
   
   header {
@@ -15,112 +15,90 @@ body {
     width: 100%;
     background: rgba(0, 0, 0, 0.8);
     padding: 16px 32px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 1000;
-  }
-  
-  header h1 {
+    text-align: center;
     font-size: 24px;
-    margin: 0;
+    font-weight: bold;
+    z-index: 1000;
     color: white;
   }
   
-  nav a {
-    margin-left: 24px;
-    color: #fff;
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s;
-  }
-  
-  nav a:hover {
-    color: #00ffc3;
-  }
-  
-  #hero {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    position: relative;
-    overflow: hidden;
-  }
-  
-  #dotra-logo {
-    width: 120px;
-    animation: spin 1.5s ease-out 1;
+  /* Logo */
+  .center-logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
+    animation: spin 3s linear 1;
   }
   
   @keyframes spin {
     0% {
-      transform: rotate(0deg) scale(1);
+      transform: translate(-50%, -50%) rotate(0deg);
     }
     100% {
-      transform: rotate(1080deg) scale(1);
+      transform: translate(-50%, -50%) rotate(1080deg);
     }
   }
   
-  .info-box {
+  /* Textbox base style */
+  .text-box {
     position: absolute;
-    width: 40%;
-    max-width: 400px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid #333;
-    padding: 20px;
-    border-radius: 12px;
     opacity: 0;
-    animation-fill-mode: forwards;
+    transition: opacity 1s ease, transform 1s ease;
+    max-width: 300px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid #333;
+    border-radius: 12px;
   }
   
-  .info-top-left {
-    top: 10%;
-    left: -50%;
-    animation: slideInLeft 1s ease 1.8s forwards;
+  /* Positioning before animation */
+  .left-top {
+    top: 20%;
+    left: -100%;
   }
-  .info-bottom-left {
-    bottom: 10%;
-    left: -50%;
-    animation: slideInLeft 1s ease 2.1s forwards;
+  .left-bottom {
+    bottom: 20%;
+    left: -100%;
   }
-  .info-top-right {
-    top: 10%;
-    right: -50%;
-    animation: slideInRight 1s ease 2.4s forwards;
+  .right-top {
+    top: 20%;
+    right: -100%;
+    text-align: right;
   }
-  .info-bottom-right {
-    bottom: 10%;
-    right: -50%;
-    animation: slideInRight 1s ease 2.7s forwards;
-  }
-  
-  @keyframes slideInLeft {
-    to {
-      left: 5%;
-      opacity: 1;
-    }
+  .right-bottom {
+    bottom: 20%;
+    right: -100%;
+    text-align: right;
   }
   
-  @keyframes slideInRight {
-    to {
-      right: 5%;
-      opacity: 1;
-    }
+  /* Animate in when body has .show */
+  body.show .left-top {
+    transform: translateX(120%);
+    opacity: 1;
+  }
+  body.show .left-bottom {
+    transform: translateX(120%);
+    opacity: 1;
+  }
+  body.show .right-top {
+    transform: translateX(-120%);
+    opacity: 1;
+  }
+  body.show .right-bottom {
+    transform: translateX(-120%);
+    opacity: 1;
   }
   
-  .download-links {
-    display: flex;
-    gap: 16px;
-    margin-top: 12px;
-  }
-  
-  .download-links img {
+  /* Store buttons */
+  a.store-link img {
     height: 40px;
+    margin-left: 10px;
     transition: transform 0.2s;
   }
-  
-  .download-links img:hover {
+  a.store-link img:hover {
     transform: scale(1.05);
   }
   
