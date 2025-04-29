@@ -1,4 +1,4 @@
-/* Dynamischer Grid-Hintergrund */
+/* Animierter Grid-Hintergrund */
 body::before {
     content: "";
     position: fixed;
@@ -12,25 +12,21 @@ body::before {
   }
   
   @keyframes gridMove {
-    from {
-      background-position: 0 0;
-    }
-    to {
-      background-position: 80px 80px;
-    }
+    from { background-position: 0 0; }
+    to { background-position: 80px 80px; }
   }
   
-  /* Grundlayout */
+  /* Basislayout */
   body {
     margin: 0;
     padding: 0;
     font-family: 'Inter', sans-serif;
     background-color: #000;
     color: white;
-    overflow: hidden;
-    height: 100vh;
+    overflow-x: hidden;
   }
   
+  /* Hero mit Logo & Typing */
   .hero {
     height: 100vh;
     display: flex;
@@ -41,7 +37,6 @@ body::before {
     padding: 20px;
   }
   
-  /* Logo */
   .logo-wrapper {
     position: relative;
   }
@@ -58,7 +53,6 @@ body::before {
     to { transform: rotate(1080deg); }
   }
   
-  /* Typing Effekt */
   .typewriter {
     margin-top: 40px;
     font-size: 28px;
@@ -77,7 +71,7 @@ body::before {
     50% { border-color: white; }
   }
   
-  /* Download Buttons */
+  /* Download Links */
   .download-links {
     margin-top: 30px;
     opacity: 0;
@@ -98,5 +92,83 @@ body::before {
   
   a.store-link img:hover {
     transform: scale(1.1);
+  }
+  
+  /* Sections */
+  .info-section {
+    padding: 80px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .info-section h2 {
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: white;
+  }
+  
+  .info-section p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: white;
+    margin: 0 auto;
+    max-width: 700px;
+  }
+  
+  /* Karten für Features */
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+  }
+  
+  .card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 24px;
+    border-radius: 12px;
+    width: 280px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid rgba(255,255,255,0.1);
+    backdrop-filter: blur(6px);
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.08);
+  }
+  
+  .card h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: white;
+  }
+  
+  .card p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: white;
+  }
+  
+  /* Scroll-In Animation */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1s ease, transform 1s ease;
+  }
+  
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 40px 20px;
+    font-size: 14px;
+    color: #666;
   }
   

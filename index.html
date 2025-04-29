@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="stylesheet" href="style.css?v=6" />
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dotra</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=7" />
 </head>
 <body>
   <main class="hero">
@@ -16,13 +16,58 @@
     <div class="typewriter" id="typing-text"></div>
 
     <div class="download-links" id="download">
-      <a class="store-link" href="#"><img src="assets/appstore.png" alt="App Store" /></a>
-      <a class="store-link" href="#"><img src="assets/playstore.png" alt="Google Play" /></a>
+      <a class="store-link" href="#"><img src="appstore.png" alt="App Store" /></a>
+      <a class="store-link" href="#"><img src="googleplay.png" alt="Google Play" /></a>
     </div>
   </main>
 
+  <section class="info-section fade-in">
+    <h2>What is Dotra?</h2>
+    <p>
+      Dotra is a next-generation mining system built for fairness, accessibility, and transparency.
+      No hardware. No fees. Just your time and engagement.
+    </p>
+  </section>
+
+  <section class="info-section cards fade-in">
+    <div class="card">
+      <h3>🔓 Access for All</h3>
+      <p>Anyone can start mining. All you need is your phone – no investment required.</p>
+    </div>
+    <div class="card">
+      <h3>⚡ Activity-Based</h3>
+      <p>Your mining power grows as you engage. Activity equals value in our ecosystem.</p>
+    </div>
+    <div class="card">
+      <h3>🌐 Community First</h3>
+      <p>We prioritize users. No whales, no pay-to-win. Just decentralized contribution.</p>
+    </div>
+  </section>
+
+  <section class="info-section fade-in">
+    <h2>Why Dotra?</h2>
+    <p>
+      Because value should be earned – not bought. Dotra rewards participation, not capital.
+      We're building a truly inclusive future, where mining belongs to the many, not the few.
+    </p>
+  </section>
+
+  <section class="info-section fade-in">
+    <h2>Start Mining Today</h2>
+    <p>
+      Join thousands who already trust Dotra to build a decentralized and fair digital economy.
+    </p>
+    <div class="download-links">
+      <a class="store-link" href="#"><img src="appstore.png" alt="App Store" /></a>
+      <a class="store-link" href="#"><img src="googleplay.png" alt="Google Play" /></a>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Dotra. All rights reserved.</p>
+  </footer>
+
   <script>
-    // Zeige Download-Buttons nach Typing
     const text = "Welcome to Dotra...";
     const typingElement = document.getElementById("typing-text");
     const download = document.getElementById("download");
@@ -38,8 +83,19 @@
       }
     }
 
-    // Starte nach Spin (3s)
     setTimeout(type, 3000);
+
+    // Animation trigger on scroll
+    const fadeInElements = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    fadeInElements.forEach(el => observer.observe(el));
   </script>
 </body>
 </html>
