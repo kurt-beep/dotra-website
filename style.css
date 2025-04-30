@@ -57,6 +57,7 @@ body::before {
   
   /* Typing Animation */
   .typewriter {
+    min-height: 40px; /* oder 2em */
     margin-top: 20px;
     font-size: 24px;
     font-weight: 600;

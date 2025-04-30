@@ -58,6 +58,9 @@
     const typingElement = document.getElementById("typing-text");
     const download = document.getElementById("download");
 
+    typingElement.style.visibility = 'visible';
+    typingElement.style.opacity = '1';
+
     let i = 0;
     function type() {
       if (i < text.length) {
