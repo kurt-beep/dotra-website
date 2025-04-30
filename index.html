@@ -26,7 +26,7 @@
   
     <!-- Fonts & CSS -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="style.css?v=9" />
+    <link rel="stylesheet" href="style.css?v=10" />
   
     <style>
       html, body {
@@ -36,6 +36,13 @@
     </style>
   </head>
 <body>
+  <header class="main-nav">
+    <nav>
+      <a href="whitepaper.html" class="nav-btn" target="_blank">Whitepaper</a>
+      <a href="roadmap.html" class="nav-btn" target="_blank">Roadmap</a>
+    </nav>
+  </header>
+
   <main class="hero">
     <div class="logo-wrapper">
       <img src="icon.png" alt="Dotra Logo" class="center-logo" id="logo" />
@@ -102,7 +109,7 @@
         }
       }
 
-      setTimeout(type, 500); // kürzere Verzögerung auf Mobilgeräten
+      setTimeout(type, 500);
 
       const fadeInElements = document.querySelectorAll('.fade-in');
       const observer = new IntersectionObserver((entries) => {
