@@ -1,185 +1,189 @@
 /* Animierter Grid-Hintergrund */
 body::before {
-    content: "";
-    position: fixed;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background-image: linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px),
-                      linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px);
-    background-size: 40px 40px;
-    z-index: -1;
-    animation: gridMove 20s linear infinite;
-    opacity: 0.2;
-  }
-  
-  @keyframes gridMove {
-    from { background-position: 0 0; }
-    to { background-position: 80px 80px; }
-  }
-  
-  /* Grundlayout */
-  body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Inter', sans-serif;
-    background-color: #000;
-    color: white;
-    overflow-x: hidden;
-    overflow-y: auto; /* Kein Scrollen */
-    height: 100dvh; /* dynamische Höhe für mobile Geräte */
-  }
-  
-  /* Hero Bereich kompakt */
-  .hero {
-    min-height: 100vh;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    text-align: center;
-    padding: 40px 20px;
-    gap: 30px;
-    box-sizing: border-box;
-  }
-  
-  .logo-wrapper {
-    position: relative;
-  }
-  
-  .center-logo {
-    width: 100px;
-    height: 100px;
-    animation: spin 3s ease-out 1;
-    transform-origin: center center;
-  }
-  
-  @keyframes spin {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(1080deg); }
-  }
-  
-  /* Typing Animation */
-  .typewriter {
-    visibility: visible;
-    opacity: 1;
-    min-height: 40px; /* oder 2em */
-    margin-top: 20px;
-    font-size: 24px;
-    font-weight: 600;
-    letter-spacing: 1.5px;
-    color: white;
-    min-height: 30px;
-    overflow: hidden;
-    white-space: nowrap;
-    border-right: 2px solid white;
-    animation: blink 0.7s infinite step-end;
-  }
-  
-  @keyframes blink {
-    from, to { border-color: transparent; }
-    50% { border-color: white; }
-  }
-  
-  /* Download Buttons */
-  .download-links {
-    margin-top: 20px;
-    opacity: 0;
-    transition: opacity 1s ease;
-    display: flex;
-    gap: 16px;
-    justify-content: center;
-  }
-  
-  .download-links.show-links {
-    opacity: 1;
-  }
-  
-  a.store-link img {
-    height: 45px;
-    transition: transform 0.3s;
-  }
-  
-  a.store-link img:hover {
-    transform: scale(1.1);
-  }
-  
-  /* Kompakte Info Sections innerhalb Hero */
-  .quick-sections {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 40px;
-    margin-top: 20px;
-  }
-  
-  .info-cluster {
-    max-width: 800px;
-  }
-  
-  .info-cluster h2 {
-    font-size: 24px;
-    font-weight: 600;
-    margin-bottom: 10px;
-  }
-  
-  .info-cluster p {
-    font-size: 16px;
-    line-height: 1.6;
-    color: white;
-  }
-  
-  /* Karten für Features */
-  .cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-  }
-  
-  .card {
-    background: rgba(255, 255, 255, 0.05);
-    padding: 16px;
-    border-radius: 10px;
-    width: 220px;
-    transition: transform 0.3s, box-shadow 0.3s;
-    border: 1px solid rgba(255,255,255,0.1);
-    backdrop-filter: blur(5px);
-  }
-  
-  .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.08);
-  }
-  
-  .card h3 {
-    font-size: 18px;
-    margin-bottom: 8px;
-    color: white;
-  }
-  
-  .card p {
-    font-size: 14px;
-    line-height: 1.4;
-    color: white;
-  }
-  
-  /* Scroll/Fade In */
-  .fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 1s ease, transform 1s ease;
-  }
-  
-  .fade-in.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  
-  /* Footer */
-  footer {
-    text-align: center;
-    padding: 10px 20px;
-    font-size: 12px;
-    color: #666;
-  }
-  
+  content: "";
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px),
+                    linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+  z-index: -1;
+  animation: gridMove 20s linear infinite;
+  opacity: 0.2;
+}
+
+@keyframes gridMove {
+  from { background-position: 0 0; }
+  to { background-position: 80px 80px; }
+}
+
+/* Grundlayout */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #000;
+  color: white;
+  overflow-x: hidden;
+  overflow-y: auto;
+  min-height: 100vh;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Hero Bereich */
+.hero {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  padding: 40px 20px;
+  gap: 30px;
+  box-sizing: border-box;
+}
+
+.logo-wrapper {
+  position: relative;
+}
+
+.center-logo {
+  width: 100px;
+  height: 100px;
+  animation: spin 3s ease-out 1;
+  transform-origin: center center;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(1080deg); }
+}
+
+/* Typing Animation */
+.typewriter {
+  visibility: visible;
+  opacity: 1;
+  min-height: 40px;
+  margin-top: 20px;
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  color: white;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid white;
+  animation: blink 0.7s infinite step-end;
+}
+
+@keyframes blink {
+  from, to { border-color: transparent; }
+  50% { border-color: white; }
+}
+
+/* Download Buttons */
+.download-links {
+  margin-top: 20px;
+  opacity: 0;
+  transition: opacity 1s ease;
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.download-links.show-links {
+  opacity: 1;
+}
+
+a.store-link img {
+  height: 45px;
+  transition: transform 0.3s;
+}
+
+a.store-link img:hover {
+  transform: scale(1.1);
+}
+
+/* Info Sections */
+.quick-sections {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  margin-top: 20px;
+  width: 100%;
+  max-width: 1000px;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.info-cluster {
+  max-width: 800px;
+}
+
+.info-cluster h2 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.info-cluster p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: white;
+}
+
+/* Karten */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 16px;
+  border-radius: 10px;
+  width: 220px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  border: 1px solid rgba(255,255,255,0.1);
+  backdrop-filter: blur(5px);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.08);
+}
+
+.card h3 {
+  font-size: 18px;
+  margin-bottom: 8px;
+  color: white;
+}
+
+.card p {
+  font-size: 14px;
+  line-height: 1.4;
+  color: white;
+}
+
+/* Scroll/Fade In */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 10px 20px;
+  font-size: 12px;
+  color: #666;
+}

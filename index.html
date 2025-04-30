@@ -3,13 +3,19 @@
 <head>
   <link rel="icon" type="image/png" href="favicon.png" />
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Dotra</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=8" />
+  <link rel="stylesheet" href="style.css?v=9" />
+  <style>
+    html, body {
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+    }
+  </style>
 </head>
 <body>
-  <main class="hero compact">
+  <main class="hero">
     <div class="logo-wrapper">
       <img src="icon.png" alt="Dotra Logo" class="center-logo" id="logo" />
     </div>
@@ -54,36 +60,40 @@
   </footer>
 
   <script>
-    const text = "Welcome to Dotra...";
-    const typingElement = document.getElementById("typing-text");
-    const download = document.getElementById("download");
+    document.addEventListener('DOMContentLoaded', () => {
+      const text = "Welcome to Dotra...";
+      const typingElement = document.getElementById("typing-text");
+      const download = document.getElementById("download");
 
-    typingElement.style.visibility = 'visible';
-    typingElement.style.opacity = '1';
+      if (!typingElement || !download) return;
 
-    let i = 0;
-    function type() {
-      if (i < text.length) {
-        typingElement.innerHTML += text.charAt(i);
-        i++;
-        setTimeout(type, 80);
-      } else {
-        download.classList.add("show-links");
-      }
-    }
+      typingElement.style.visibility = 'visible';
+      typingElement.style.opacity = '1';
 
-    setTimeout(type, 3000);
-
-    const fadeInElements = document.querySelectorAll('.fade-in');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
+      let i = 0;
+      function type() {
+        if (i < text.length) {
+          typingElement.textContent += text.charAt(i);
+          i++;
+          setTimeout(type, 80);
+        } else {
+          download.classList.add("show-links");
         }
-      });
-    }, { threshold: 0.1 });
+      }
 
-    fadeInElements.forEach(el => observer.observe(el));
+      setTimeout(type, 500); // kürzere Verzögerung auf Mobilgeräten
+
+      const fadeInElements = document.querySelectorAll('.fade-in');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.1 });
+
+      fadeInElements.forEach(el => observer.observe(el));
+    });
   </script>
 </body>
 </html>
