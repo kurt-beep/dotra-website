@@ -218,60 +218,49 @@ footer {
   transform: translateY(-1px);
 }
 
-/* Why Dotra Works Animations */
-.why-works-section {
-  margin-top: 60px;
-  text-align: center;
-  max-width: 900px;
-  padding: 0 20px;
+/* Why Dotra Works SVG Flow */
+.why-works {
+  padding: 80px 20px;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
-.why-works-section h2 {
-  font-size: 28px;
-  margin-bottom: 40px;
-}
-
-.line-flow {
+.flow-section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 30px;
+  gap: 60px;
   position: relative;
 }
 
-.flow-box {
+.flow-text {
   background: rgba(255, 255, 255, 0.05);
-  padding: 20px 24px;
+  padding: 20px;
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  max-width: 500px;
+  max-width: 400px;
   font-size: 16px;
   line-height: 1.6;
   position: relative;
-  animation: fadeUp 0.8s ease forwards;
-  opacity: 0;
 }
 
-.line {
-  width: 2px;
-  height: 40px;
-  background: #00fff7;
-  animation: growLine 1s ease forwards;
-  opacity: 0;
+.flow-text.left { align-self: flex-start; }
+.flow-text.right { align-self: flex-end; }
+.flow-text.center { align-self: center; }
+
+.flow-line,
+.flow-line-vertical {
+  width: 100%;
+  height: 80px;
 }
 
-.line.horizontal {
-  width: 80px;
-  height: 2px;
-  background: #00fff7;
+.flow-line path,
+.flow-line-vertical path {
+  stroke-dasharray: 600;
+  stroke-dashoffset: 600;
+  animation: drawLine 2s ease forwards;
 }
 
-@keyframes fadeUp {
-  from { transform: translateY(20px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
-}
-
-@keyframes growLine {
-  from { transform: scaleY(0); opacity: 0; }
-  to { transform: scaleY(1); opacity: 1; }
+@keyframes drawLine {
+  to { stroke-dashoffset: 0; }
 }
