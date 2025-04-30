@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>DOTRA Roadmap</title>
   <link rel="icon" type="image/png" href="icon.png" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=roadmap" />
+  <link rel="stylesheet" href="style.css?v=roadmap-pi-style" />
   <style>
     body {
       font-family: 'Inter', sans-serif;
@@ -17,23 +17,31 @@
     }
 
     .roadmap-container {
-      max-width: 1000px;
-      margin: 80px auto;
-      padding: 0 20px;
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 20px;
     }
 
     h1 {
-      text-align: center;
       font-size: 32px;
-      margin-bottom: 40px;
-      color: white;
+      text-align: center;
+      margin-bottom: 60px;
     }
 
     .timeline {
       position: relative;
-      margin: 0;
+      border-left: 3px solid #00fff7;
       padding-left: 30px;
-      border-left: 2px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 12px;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: #00fff7;
     }
 
     .phase {
@@ -44,10 +52,10 @@
     .phase::before {
       content: "";
       position: absolute;
-      left: -12px;
-      top: 5px;
-      width: 16px;
-      height: 16px;
+      left: -20px;
+      top: 0;
+      width: 20px;
+      height: 20px;
       border-radius: 50%;
       background: #00fff7;
       border: 2px solid white;
@@ -56,18 +64,12 @@
     .phase h2 {
       font-size: 22px;
       margin-bottom: 10px;
-      color: white;
     }
 
     .phase p {
       font-size: 16px;
-      line-height: 1.6;
+      line-height: 1.7;
       color: white;
-    }
-
-    .icon {
-      font-size: 24px;
-      margin-right: 8px;
     }
   </style>
 </head>
@@ -75,25 +77,52 @@
   <div class="roadmap-container">
     <h1>🚀 DOTRA Roadmap</h1>
     <div class="timeline">
+
       <div class="phase">
         <h2>📱 Phase I – Beta Launch</h2>
-        <p>Initial app release with mining functionality. Users can mine once per day, and referral system is introduced to boost community growth.</p>
+        <p>
+          • Initial release of the DOTRA App for Android & iOS<br>
+          • Daily mining feature enabled for early adopters<br>
+          • Referral system launched to build the core community
+        </p>
       </div>
 
       <div class="phase">
         <h2>🌱 Phase II – Community Expansion</h2>
-        <p>Introduction of KYC verification and community voting. Focus on building a verified, engaged user base ready for governance participation.</p>
+        <p>
+          • Global rollout with multi-language support<br>
+          • KYC verification system introduced<br>
+          • Community voting tools implemented
+        </p>
       </div>
 
       <div class="phase">
         <h2>🛠️ Phase III – Blockchain Integration</h2>
-        <p>Migration to the Polygon network with a secure Testnet. DOTRA token becomes real, transferable, and prepared for future exchange listings.</p>
+        <p>
+          • Integration with the Polygon Testnet<br>
+          • Smart contracts for rewards & identity<br>
+          • Internal wallet testing begins
+        </p>
       </div>
 
       <div class="phase">
-        <h2>🌐 Phase IV – Decentralization & Exchange</h2>
-        <p>Listing on public exchanges, completion of audits, and beginning of full community governance via smart contracts and on-chain voting.</p>
+        <h2>🌐 Phase IV – Mainnet & Exchange</h2>
+        <p>
+          • DOTRA Token launches on Polygon Mainnet<br>
+          • Listings on trusted crypto exchanges<br>
+          • Smart contract audit & DAO testing
+        </p>
       </div>
+
+      <div class="phase">
+        <h2>🪩 Phase V – Decentralized Governance</h2>
+        <p>
+          • Voting system for upgrades & funding<br>
+          • Developer tools & SDKs for ecosystem<br>
+          • Long-term roadmap published with community
+        </p>
+      </div>
+
     </div>
   </div>
 </body>
