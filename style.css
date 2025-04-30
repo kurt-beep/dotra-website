@@ -1,4 +1,4 @@
-/* Grid Background */
+/* Animierter Grid-Hintergrund */
 body::before {
   content: "";
   position: fixed;
@@ -16,6 +16,7 @@ body::before {
   to { background-position: 80px 80px; }
 }
 
+/* Grundlayout */
 body {
   margin: 0;
   padding: 0;
@@ -28,7 +29,166 @@ body {
   -webkit-overflow-scrolling: touch;
 }
 
-/* NAV */
+/* Hero Bereich */
+.hero {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  padding: 40px 20px;
+  gap: 30px;
+  box-sizing: border-box;
+}
+
+.logo-wrapper {
+  position: relative;
+}
+
+.center-logo {
+  width: 100px;
+  height: 100px;
+  animation: spin 3s ease-out 1;
+  transform-origin: center center;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(1080deg); }
+}
+
+/* Typing Animation */
+.typewriter {
+  visibility: visible;
+  opacity: 1;
+  min-height: 40px;
+  margin-top: 20px;
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  color: white;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid white;
+  animation: blink 0.7s infinite step-end;
+}
+
+@keyframes blink {
+  from, to { border-color: transparent; }
+  50% { border-color: white; }
+}
+
+/* Download Buttons */
+.download-links {
+  margin-top: 20px;
+  opacity: 0;
+  transition: opacity 1s ease;
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.download-links.show-links {
+  opacity: 1;
+}
+
+a.store-link img {
+  height: 45px;
+  transition: transform 0.3s;
+}
+
+a.store-link img:hover {
+  transform: scale(1.1);
+}
+
+/* Info Sections */
+.quick-sections {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  margin-top: 20px;
+  width: 100%;
+  max-width: 1000px;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.info-cluster {
+  max-width: 800px;
+}
+
+.info-cluster h2 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.info-cluster p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: white;
+}
+
+/* Karten */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 16px;
+  border-radius: 10px;
+  width: 220px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  border: 1px solid rgba(255,255,255,0.1);
+  backdrop-filter: blur(5px);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.08);
+}
+
+.card h3 {
+  font-size: 18px;
+  margin-bottom: 8px;
+  color: white;
+}
+
+.card p {
+  font-size: 14px;
+  line-height: 1.4;
+  color: white;
+}
+
+/* Scroll/Fade In */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 10px 20px;
+  font-size: 12px;
+  color: #666;
+}
+
+/* Navigationsmenü oben rechts */
 .main-nav {
   position: fixed;
   top: 20px;
@@ -56,209 +216,4 @@ body {
 .main-nav a:hover {
   background: rgba(255, 255, 255, 0.1);
   transform: translateY(-1px);
-}
-
-/* HERO */
-.hero {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  text-align: center;
-  padding: 40px 20px;
-  gap: 30px;
-}
-
-.center-logo {
-  width: 100px;
-  height: 100px;
-  animation: spin 3s ease-out 1;
-  transform-origin: center center;
-}
-
-@keyframes spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(1080deg); }
-}
-
-.typewriter {
-  visibility: visible;
-  opacity: 1;
-  min-height: 40px;
-  font-size: 24px;
-  font-weight: 600;
-  letter-spacing: 1.5px;
-  color: white;
-  overflow: hidden;
-  white-space: nowrap;
-  border-right: 2px solid white;
-  animation: blink 0.7s infinite step-end;
-}
-
-@keyframes blink {
-  from, to { border-color: transparent; }
-  50% { border-color: white; }
-}
-
-.download-links {
-  margin-top: 20px;
-  opacity: 0;
-  transition: opacity 1s ease;
-  display: flex;
-  gap: 16px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.download-links.show-links {
-  opacity: 1;
-}
-
-a.store-link img {
-  height: 45px;
-  transition: transform 0.3s;
-}
-
-a.store-link img:hover {
-  transform: scale(1.1);
-}
-
-.quick-sections {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 40px;
-  width: 100%;
-  max-width: 1000px;
-  padding: 0 20px;
-  box-sizing: border-box;
-}
-
-.info-cluster {
-  max-width: 800px;
-}
-
-.info-cluster h2 {
-  font-size: 24px;
-  font-weight: 600;
-  margin-bottom: 10px;
-}
-
-.info-cluster p {
-  font-size: 16px;
-  line-height: 1.6;
-}
-
-.cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-}
-
-.card {
-  background: rgba(255, 255, 255, 0.05);
-  padding: 16px;
-  border-radius: 10px;
-  width: 220px;
-  transition: transform 0.3s, box-shadow 0.3s;
-  border: 1px solid rgba(255,255,255,0.1);
-  backdrop-filter: blur(5px);
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.08);
-}
-
-.card h3 {
-  font-size: 18px;
-  margin-bottom: 8px;
-}
-
-.card p {
-  font-size: 14px;
-  line-height: 1.4;
-}
-
-.fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 1s ease, transform 1s ease;
-}
-
-.fade-in.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Pipeline Section */
-.pipeline {
-  max-width: 1000px;
-  margin: 100px auto;
-  padding: 40px 20px;
-  text-align: center;
-}
-
-.pipeline h2 {
-  font-size: 28px;
-  margin-bottom: 40px;
-}
-
-.pipeline-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
-  gap: 60px;
-}
-
-.pipe-text {
-  background: rgba(255, 255, 255, 0.05);
-  padding: 20px;
-  border-radius: 12px;
-  max-width: 420px;
-  position: relative;
-  z-index: 1;
-  border: 1px solid rgba(255,255,255,0.1);
-}
-
-.pipe-text.left {
-  align-self: flex-start;
-  margin-left: 0;
-}
-
-.pipe-text.right {
-  align-self: flex-end;
-  margin-right: 0;
-}
-
-.pipe-line {
-  width: 100%;
-  height: 100px;
-  overflow: visible;
-  stroke: #00fff7;
-}
-
-.pipe-line path {
-  stroke: #00fff7;
-  stroke-width: 2;
-  fill: none;
-  stroke-dasharray: 600;
-  stroke-dashoffset: 600;
-  animation: drawPipe 2s ease forwards;
-}
-
-@keyframes drawPipe {
-  to {
-    stroke-dashoffset: 0;
-  }
-}
-
-footer {
-  text-align: center;
-  padding: 10px 20px;
-  font-size: 12px;
-  color: #666;
 }
