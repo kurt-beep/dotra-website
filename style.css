@@ -24,12 +24,13 @@ body::before {
     background-color: #000;
     color: white;
     overflow-x: hidden;
-    overflow-y: hidden; /* Kein Scrollen */
+    overflow-y: auto; /* Kein Scrollen */
+    height: 100dvh; /* dynamische Höhe für mobile Geräte */
   }
   
   /* Hero Bereich kompakt */
   .hero {
-    height: 100vh;
+    height: 100dvh;
     width: 100%;
     display: flex;
     justify-content: center;
