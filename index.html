@@ -2,32 +2,11 @@
 <html lang="en">
   <head>
     <link rel="icon" type="image/png" href="icon.png" />
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <title>Dotra – Mine. Fair. Together.</title>
-  
-    <!-- SEO -->
-    <meta name="description" content="DOTRA is the future of fair and community-powered digital mining. No hardware. No fees. Just your time and engagement." />
-    <meta name="keywords" content="Dotra, mining app, fair mining, mobile mining, decentralized economy, crypto mining without hardware" />
-    <meta name="author" content="Dotra Team" />
-  
-    <!-- Open Graph (Facebook, WhatsApp etc.) -->
-    <meta property="og:title" content="Dotra – Mine. Fair. Together." />
-    <meta property="og:description" content="DOTRA is a new kind of mining: fair, free and powered by activity. Join the movement." />
-    <meta property="og:image" content="https://dotraapp.com/og-image.png" />
-    <meta property="og:url" content="https://dotraapp.com/" />
-    <meta property="og:type" content="website" />
-  
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Dotra – Mine. Fair. Together." />
-    <meta name="twitter:description" content="No hardware. No fees. Just your activity. Discover the next-gen mining experience." />
-    <meta name="twitter:image" content="https://dotraapp.com/og-image.png" />
-  
-    <!-- Fonts & CSS -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="style.css?v=10" />
-  
+    <link rel="stylesheet" href="style.css?v=11" />
     <style>
       html, body {
         scroll-behavior: smooth;
@@ -35,92 +14,126 @@
       }
     </style>
   </head>
-<body>
-  <header class="main-nav">
-    <nav>
-      <a href="whitepaper.html" class="nav-btn" >Whitepaper</a>
-    </nav>
-  </header>
+  <body>
+    <header class="main-nav">
+      <nav>
+        <a href="whitepaper.html" class="nav-btn">Whitepaper</a>
+      </nav>
+    </header>
 
-  <main class="hero">
-    <div class="logo-wrapper">
-      <img src="icon.png" alt="Dotra Logo" class="center-logo" id="logo" />
-    </div>
-
-    <div class="typewriter" id="typing-text"></div>
-
-    <div class="download-links" id="download">
-      <a class="store-link" href="#"><img src="appstore.png" alt="App Store" /></a>
-      <a class="store-link" href="#"><img src="playstore.png" alt="Google Play" /></a>
-    </div>
-
-    <div class="quick-sections">
-      <div class="info-cluster fade-in">
-        <h2>What is Dotra?</h2>
-        <p>Dotra is a next-generation mining system built for fairness, accessibility, and transparency. No hardware. No fees. Just your time and engagement.</p>
+    <main class="hero">
+      <div class="logo-wrapper">
+        <img src="icon.png" alt="Dotra Logo" class="center-logo" id="logo" />
       </div>
 
-      <div class="cards fade-in">
-        <div class="card">
-          <h3>🔓 Access for All</h3>
-          <p>Anyone can start mining. All you need is your phone – no investment required.</p>
-        </div>
-        <div class="card">
-          <h3>⚡ Activity-Based</h3>
-          <p>Your mining power grows as you engage. Activity equals value in our ecosystem.</p>
-        </div>
-        <div class="card">
-          <h3>🌐 Community First</h3>
-          <p>We prioritize users. No whales, no pay-to-win. Just decentralized contribution.</p>
-        </div>
+      <div class="typewriter" id="typing-text"></div>
+
+      <div class="download-links" id="download">
+        <a class="store-link" href="#"><img src="appstore.png" alt="App Store" /></a>
+        <a class="store-link" href="#"><img src="playstore.png" alt="Google Play" /></a>
       </div>
 
-      <div class="info-cluster fade-in">
-        <h2>Why Dotra?</h2>
-        <p>Because value should be earned – not bought. Dotra rewards participation, not capital.</p>
+      <div class="quick-sections">
+        <div class="info-cluster fade-in">
+          <h2>What is Dotra?</h2>
+          <p>Dotra is a next-generation mining system built for fairness, accessibility, and transparency. No hardware. No fees. Just your time and engagement.</p>
+        </div>
+
+        <div class="cards fade-in">
+          <div class="card">
+            <h3>🔓 Access for All</h3>
+            <p>Anyone can start mining. All you need is your phone – no investment required.</p>
+          </div>
+          <div class="card">
+            <h3>⚡ Activity-Based</h3>
+            <p>Your mining power grows as you engage. Activity equals value in our ecosystem.</p>
+          </div>
+          <div class="card">
+            <h3>🌐 Community First</h3>
+            <p>We prioritize users. No whales, no pay-to-win. Just decentralized contribution.</p>
+          </div>
+        </div>
+
+        <div class="info-cluster fade-in">
+          <h2>Why Dotra?</h2>
+          <p>Because value should be earned – not bought. Dotra rewards participation, not capital.</p>
+        </div>
+
+        <div class="info-cluster fade-in" id="stats-box">
+          <h2>📊 Live Mining Stats</h2>
+          <p><strong>Total DOTRA Mined:</strong> <span id="dotraCount">Loading...</span></p>
+          <p><strong>Registered Users:</strong> <span id="userCount">Loading...</span></p>
+        </div>
       </div>
-    </div>
-  </main>
+    </main>
 
-  <footer>
-    <p>&copy; 2025 Dotra. All rights reserved.</p>
-  </footer>
+    <footer>
+      <p>&copy; 2025 Dotra. All rights reserved.</p>
+    </footer>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const text = "Welcome to Dotra...";
-      const typingElement = document.getElementById("typing-text");
-      const download = document.getElementById("download");
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const text = "Welcome to Dotra...";
+        const typingElement = document.getElementById("typing-text");
+        const download = document.getElementById("download");
 
-      if (!typingElement || !download) return;
+        if (!typingElement || !download) return;
 
-      typingElement.style.visibility = 'visible';
-      typingElement.style.opacity = '1';
+        typingElement.style.visibility = 'visible';
+        typingElement.style.opacity = '1';
 
-      let i = 0;
-      function type() {
-        if (i < text.length) {
-          typingElement.textContent += text.charAt(i);
-          i++;
-          setTimeout(type, 80);
-        } else {
-          download.classList.add("show-links");
-        }
-      }
-
-      setTimeout(type, 500);
-
-      const fadeInElements = document.querySelectorAll('.fade-in');
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
+        let i = 0;
+        function type() {
+          if (i < text.length) {
+            typingElement.textContent += text.charAt(i);
+            i++;
+            setTimeout(type, 80);
+          } else {
+            download.classList.add("show-links");
           }
-        });
-      }, { threshold: 0.1 });
+        }
 
-      fadeInElements.forEach(el => observer.observe(el));
-    });
-  </script>
-</body>
+        setTimeout(type, 500);
+
+        const fadeInElements = document.querySelectorAll('.fade-in');
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+            }
+          });
+        }, { threshold: 0.1 });
+
+        fadeInElements.forEach(el => observer.observe(el));
+
+        // Fetch stats
+        fetch("https://dotranew-production.up.railway.app/stats")
+          .then(res => res.json())
+          .then(data => {
+            animateValue("dotraCount", 0, data.totalDotra, 2000, " DOTRA");
+            animateValue("userCount", 0, data.totalUsers, 2000, " users");
+          })
+          .catch(err => {
+            console.error("Stats fetch error:", err);
+            document.getElementById("dotraCount").textContent = "N/A";
+            document.getElementById("userCount").textContent = "N/A";
+          });
+
+        function animateValue(id, start, end, duration, suffix) {
+          const el = document.getElementById(id);
+          let startTimestamp = null;
+          const step = timestamp => {
+            if (!startTimestamp) startTimestamp = timestamp;
+            const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+            const value = Math.floor(progress * (end - start) + start);
+            el.textContent = value.toLocaleString() + suffix;
+            if (progress < 1) {
+              window.requestAnimationFrame(step);
+            }
+          };
+          window.requestAnimationFrame(step);
+        }
+      });
+    </script>
+  </body>
 </html>
