@@ -8,6 +8,11 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 // Middleware für JSON-Parsing
 app.use(express.json());
 
+// Healthcheck-Route - muss als erste Route definiert werden
+app.get('/health', (req, res) => {
+  res.status(200).send('OK');
+});
+
 // API-Endpunkt für das Kontaktformular
 app.post('/api/send-email', async (req, res) => {
   try {
@@ -41,12 +46,15 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-// Healthcheck-Route
-app.get('/health', (req, res) => {
-  res.status(200).send('OK');
+// Fehlerbehandlung
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).send('Something broke!');
 });
 
 const port = process.env.PORT || 8080;
-app.listen(port, '0.0.0.0', () => {
-  console.log(`Server running on port ${port}`);
+const host = '0.0.0.0';
+
+app.listen(port, host, () => {
+  console.log(`Server running on http://${host}:${port}`);
 }); 
