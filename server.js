@@ -28,7 +28,7 @@ app.post('/api/send-email', async (req, res) => {
       },
       body: JSON.stringify({
         from: "Dotra <noreply@dotraapp.com>",
-        to: ["dotraapp@gmail.com"],
+        to: ["kerim@dotraapp.com"],
         subject: `New Contact Form Submission from ${name}`,
         html: `
           <h2>New Contact Form Submission</h2>
