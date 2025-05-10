@@ -3,6 +3,4 @@ builder = "nixpacks"
 buildCommand = "npm install"
 
 [deploy]
-startCommand = "npm start"
-healthcheckPath = "/index.html"
-healthcheckTimeout = 300 
+startCommand = "npm start" 
