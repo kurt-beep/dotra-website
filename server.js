@@ -16,6 +16,13 @@ app.post('/api/send-email', async (req, res) => {
     const { name, email, message } = req.body;
     const apiKey = process.env.RESEND_API_KEY;
 
+    if (!apiKey) {
+      console.error('❌ RESEND_API_KEY is not set in environment variables');
+      throw new Error('Email service configuration is missing');
+    }
+
+    console.log('📧 Attempting to send email:', { name, email });
+
     const response = await request("https://api.resend.com/emails", {
       method: "POST",
       headers: {
@@ -37,17 +44,29 @@ app.post('/api/send-email', async (req, res) => {
     });
 
     const responseBody = await response.body.text();
+    console.log('📨 Resend API Response:', responseBody);
+
     const data = JSON.parse(responseBody);
 
     if (response.statusCode >= 400) {
-      console.error("❌ Error sending email:", data);
-      throw new Error("Failed to send email");
+      console.error("❌ Error sending email:", {
+        statusCode: response.statusCode,
+        data: data
+      });
+      throw new Error(data.message || "Failed to send email");
     }
 
+    console.log('✅ Email sent successfully');
     res.json({ success: true, data });
   } catch (error) {
-    console.error('Error:', error);
-    res.status(500).json({ error: error.message });
+    console.error('❌ Error in /api/send-email:', {
+      message: error.message,
+      stack: error.stack
+    });
+    res.status(500).json({ 
+      error: "Failed to send email",
+      details: error.message 
+    });
   }
 });
 
@@ -63,4 +82,9 @@ const port = process.env.PORT || 8080;
 
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
+  console.log('Environment:', {
+    NODE_ENV: process.env.NODE_ENV,
+    PORT: process.env.PORT,
+    RESEND_API_KEY: process.env.RESEND_API_KEY ? 'Set' : 'Not Set'
+  });
 }); 
