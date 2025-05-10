@@ -4,10 +4,10 @@
   "description": "Dotra Website with Contact Form",
   "main": "index.html",
   "scripts": {
-    "start": "serve -s . -l $PORT"
+    "start": "http-server . -p $PORT -a 0.0.0.0"
   },
   "dependencies": {
-    "serve": "14.2.1"
+    "http-server": "14.1.1"
   },
   "engines": {
     "node": ">=18.0.0"
