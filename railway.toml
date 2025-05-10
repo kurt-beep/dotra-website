@@ -3,4 +3,10 @@ builder = "nixpacks"
 buildCommand = "npm install"
 
 [deploy]
-startCommand = "npm start" 
+startCommand = "npm start"
+healthcheckPath = "/"
+healthcheckTimeout = 300
+
+[env]
+PORT = "8080"
+NODE_ENV = "production" 

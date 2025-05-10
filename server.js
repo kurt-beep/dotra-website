@@ -42,6 +42,8 @@ app.get('*', (req, res) => {
 });
 
 const port = process.env.PORT || 3000;
-app.listen(port, () => {
-  console.log(`Server läuft auf Port ${port}`);
+const host = '0.0.0.0';
+
+app.listen(port, host, () => {
+  console.log(`Server läuft auf http://${host}:${port}`);
 }); 
