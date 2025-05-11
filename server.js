@@ -56,7 +56,7 @@ app.post('/api/send-email', async (req, res) => {
 });
 
 // Statische Dateien
-app.use(express.static(__dirname));
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Hauptroute
 app.get('/', (req, res) => {
