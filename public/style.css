@@ -100,7 +100,16 @@ a.store-link img {
   transition: transform 0.3s;
 }
 
+.store-link img {
+  height: 45px;
+  transition: transform 0.3s;
+}
+
 a.store-link img:hover {
+  transform: scale(1.1);
+}
+
+.store-link img:hover {
   transform: scale(1.1);
 }
 
