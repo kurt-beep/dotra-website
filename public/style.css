@@ -104,6 +104,14 @@ a.store-link img:hover {
   transform: scale(1.1);
 }
 
+.coming-soon {
+  color: #00ccff;
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 5px;
+  text-align: center;
+}
+
 /* Info Sections */
 .quick-sections {
   display: flex;
