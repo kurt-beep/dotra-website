@@ -10,45 +10,28 @@ app.get('/health', (req, res) => {
   res.send('OK');
 });
 
-// E-Mail-Endpunkt
+// Formspree-Endpunkt
 app.post('/api/send-email', async (req, res) => {
   try {
     const { name, email, message } = req.body;
-    const apiKey = process.env.RESEND_API_KEY;
 
-    if (!apiKey) {
-      throw new Error("RESEND_API_KEY is not set");
-    }
-
-    const response = await request("https://api.resend.com/emails", {
+    const response = await request("https://formspree.io/f/mbloqpvb", {
       method: "POST",
       headers: {
-        "Authorization": `Bearer ${apiKey}`,
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        from: "Dotra <noreply@dotraapp.com>",
-        to: ["kerim@dotraapp.com"],
-        subject: `New Contact Form Submission from ${name}`,
-        html: `
-          <h2>New Contact Form Submission</h2>
-          <p><strong>Name:</strong> ${name}</p>
-          <p><strong>Email:</strong> ${email}</p>
-          <p><strong>Message:</strong></p>
-          <p>${message}</p>
-        `
+        name,
+        email,
+        message
       })
     });
 
-    const responseBody = await response.body.text();
-    const data = JSON.parse(responseBody);
-
     if (response.statusCode >= 400) {
-      console.error("❌ Fehler beim Mailversand:", data);
-      throw new Error("Failed to send email");
+      throw new Error("Failed to send form submission");
     }
 
-    res.json({ success: true, data });
+    res.json({ success: true });
   } catch (error) {
     console.error("❌ Error:", error);
     res.status(500).json({ error: error.message });
